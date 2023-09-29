@@ -1,26 +1,20 @@
-const express=require("express");
-const mongoose=require("mongoose");
-const router = require("./routes/book-routes");
-const router1= require("./routes/user-routes");
-const app= express();
-const cors= require('cors');
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import {BrowserRouter} from "react-router-dom";
 
 
-// app.use('/',(req,res,next) => {
-//     res.send("Middleware");
-// })
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <BrowserRouter>
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+  </BrowserRouter>,
+  document.getElementById("root")
+);
 
-
-app.use(express.json()); // bcoz server dont know which type of data we are sending
-app.use(cors());
-app.use("/books",router);
-app.use('/api', router1);   
-
-
-mongoose.connect("mongodb+srv://admin:admin09@cluster0.pzssgqk.mongodb.net/bookstores?retryWrites=true&w=majority"
-)
-.then(()=> console.log("Connected to database"))
-.then(()=> {
-    app.listen(9000);
-})
-.catch((err)=>console.log(err));
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
