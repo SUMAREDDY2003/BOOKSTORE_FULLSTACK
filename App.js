@@ -6,7 +6,9 @@ import AddBook from "./components/AddBook";
 import Books  from "./components/Book/Books";
 import About from "./components/About";
 import BookDetail from "./components/Book/BookDetail";
-
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import Welcome from "./components/Welcome";
 function App() {
   return (
    <React.Fragment>
@@ -20,7 +22,10 @@ function App() {
         <Route path='/books' element={<Books/>} exact/>
         <Route path='/about' element={<About/>} exact/>
         <Route path='/books/:id' element={<BookDetail/>} exact/>
-        
+        <Route path='/login' element={<Login/>} exact/>
+        <Route path='/signup' element={<Signup/>} exact/>
+        <Route path='/welcome' element={<Welcome/>} exact/>
+       
       </Routes>
     </main>
    </React.Fragment>
